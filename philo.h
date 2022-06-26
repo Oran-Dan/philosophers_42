@@ -6,7 +6,7 @@
 /*   By: orandan <orandan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 11:53:26 by odan              #+#    #+#             */
-/*   Updated: 2022/06/22 14:46:35 by orandan          ###   ########.fr       */
+/*   Updated: 2022/06/26 13:42:00 by orandan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int			ft_error(void);
 uli			get_time();
 int			ft_argtoi(const char *str);
 long int	*ft_checkarg(int argc, char **argv);
-void		ft_usleep(uli tme);
+void		ft_msleep(uli tme);
 t_phil		*add_t_phil(t_phil *head, int i, long int *info);
 t_phil		*ft_llist(int size, long int *info);
 t_phil		*ft_phil_list(int argc, char **argv);

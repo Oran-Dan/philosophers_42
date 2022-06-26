@@ -6,7 +6,7 @@
 /*   By: orandan <orandan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:19:03 by odan              #+#    #+#             */
-/*   Updated: 2022/06/26 11:35:30 by orandan          ###   ########.fr       */
+/*   Updated: 2022/06/26 13:49:55 by orandan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,15 @@ int	ft_argtoi(const char *str)
 	return ((int)integ);
 }
 
-void	ft_usleep(uli tme)
+void	ft_msleep(uli tme)
 {
-	while (tme > 100)
+	uli	i = get_time();
+
+//	while (tme > 50)
+	while (get_time() < i + tme)
 	{
-		usleep(75);
-		tme -= 100;
+		usleep(50);
+//		tme -= 50;
 	}
-	usleep(tme);
+//	usleep(tme);
 }

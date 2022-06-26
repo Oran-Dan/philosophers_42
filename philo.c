@@ -6,7 +6,7 @@
 /*   By: orandan <orandan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 11:53:31 by odan              #+#    #+#             */
-/*   Updated: 2022/06/26 11:20:10 by orandan          ###   ########.fr       */
+/*   Updated: 2022/06/26 13:55:28 by orandan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,17 @@ int	main(int argc, char **argv)
 
 	long int	i = get_time();
 //	printf("%li\n", i);
-	ft_usleep(500 * 1000);
+	ft_msleep(1);
+	ft_msleep(1);
+	ft_msleep(1);
+	ft_msleep(1);
+	ft_msleep(1);
+	ft_msleep(1);
+	ft_msleep(1);
+	ft_msleep(1);
+	ft_msleep(1);
+	ft_msleep(1);
+
 	printf("%li\n", get_time() - i);
 
 	t_lst_ph = ft_phil_list(argc, argv);

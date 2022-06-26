@@ -6,7 +6,7 @@
 /*   By: orandan <orandan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 14:33:04 by orandan           #+#    #+#             */
-/*   Updated: 2022/06/26 11:16:12 by orandan          ###   ########.fr       */
+/*   Updated: 2022/06/26 13:42:14 by orandan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ void	*routine(void *arg)
         printf("%li\t%i has taken a fork \t(t_l = %li)\n", get_time() - ph->strt, ph->n_ph, ph->t_l);
         printf("%li\t%i is eating \t\t(t_l = %li)\n", get_time() - ph->strt, ph->n_ph, ph->t_l);
 		ph->t_l = get_time() - ph->strt + ph->t_d;
-		ft_usleep(ph->t_e * 1000);
+		ft_msleep(ph->t_e); //ms
         printf("%li\t%i is sleeping \t\t(t_l = %li)\n", get_time() - ph->strt, ph->n_ph, ph->t_l);
 		pthread_mutex_unlock(&((ph->nxt)->frk));
 		pthread_mutex_unlock(&(ph->frk));
-		ft_usleep(ph->t_s * 1000);
+		ft_msleep(ph->t_s);
 	}
 	ph->dead = get_time() - ph->strt;
 	return (NULL);
@@ -47,7 +47,7 @@ void    *die(void *arg)
 		ph = ph->nxt;
 	ph->dead = get_time() - ph->strt;
 	printf("%li	%i died\n", ph->dead, ph->n_ph);
-//	pthrd_join(ph); how to kill all threads at this point
+//	pthrd_join(ph); //how to kill all threads at this point
 	return (NULL);
 }
 
